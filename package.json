@@ -1,5 +1,5 @@
 {
-    "name": "@jadesrochers/renamethis",
+    "name": "@jadesrochers/legends",
     "version": "0.1.0",
     "license": "MIT",
     "author": "Jared Desrochers",
@@ -8,16 +8,16 @@
     "module": "build/esm.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jadesrochers/renamethis.git"
+        "url": "https://github.com/jadesrochers/legends.git"
     },
-    "description": "Describe what the component library does",
+    "description": "A custom legend that matched my map formats",
     "keywords": [
         "react"
     ],
     "dependencies": {
         "@emotion/core": "^10.0.10",
-        "@jadesrochers/histograminteract": "^0.1.0",
-        "@jadesrochers/reacthelpers": "^0.1.8",
+        "@jadesrochers/histograminteract": "^0.1.1",
+        "@jadesrochers/reacthelpers": "^0.1.10",
         "ramda": "^0.26.1"
     },
     "peerdependencies": {
@@ -35,12 +35,12 @@
         "babel-loader": "^8.0.6",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.13.0",
-        "eslint": "^6.4.0",
+        "eslint": "^6.6.0",
         "eslint-config-problems": "^3.0.1",
         "jest": "^24.9.0",
         "jest-emotion": "^10.0.11",
-        "react": "^16.8.6",
-        "react-dom": "^16.8.6",
+        "react": "^16.11.0",
+        "react-dom": "^16.11.0",
         "rollup": "^1.25.2",
         "rollup-plugin-babel": "^4.3.3",
         "rollup-plugin-commonjs": "^10.1.0",
