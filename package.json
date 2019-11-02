@@ -11,7 +11,9 @@
     },
     "description": "A custom legend that matched my map formats",
     "keywords": [
-        "react"
+        "react",
+        "label",
+        "legend"
     ],
     "dependencies": {
         "@emotion/core": "^10.0.10",
@@ -36,6 +38,8 @@
         "enzyme-adapter-react-16": "^1.13.0",
         "eslint": "^6.6.0",
         "eslint-config-problems": "^3.0.1",
+        "eslint-plugin-react": "^7.16.0",
+        "eslint-plugin-react-hooks": "^2.2.0",
         "jest": "^24.9.0",
         "jest-emotion": "^10.0.11",
         "react": "^16.11.0",
