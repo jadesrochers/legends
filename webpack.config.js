@@ -48,6 +48,7 @@ const config = {
     'ramda': 'ramda', 
     'd3-format':'d3-format', 
     '@jadesrochers/histograminteract': '@jadesrochers/histograminteract', 
+    '@emotion/core':'@emotion/core',
    },
 
 }
