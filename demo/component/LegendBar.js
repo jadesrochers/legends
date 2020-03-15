@@ -38,7 +38,7 @@ const LegendHoriz3 = () => {
   const datadecorate = power(3/5, GnYlRd7, data)
   return (
     <BarScale data={data} datadisplay={datadecorate}
-      formatter={format('.2s')} svgwidth={500} ticknum={6}
+      formatter={format('.2s')} svgwidth={500} elemwidth={'800px'} ticknum={6}
      />
   );
 };

@@ -48,7 +48,7 @@ const BarScale = (props) => {
   const fillarr = R.zipWith((x,x2) => (props.datadisplay((x+x2)/2)))(R.init(tickmarks), R.drop(1, tickmarks))
   const width = roundtenth( dispwidth/tickmarks.length )
   const height = roundtenth( width/5 )
-  const barheight = props.barheight ? props.barheight : (dispwidth/8)
+  const barheight = props.barheight ? props.barheight : (dispwidth/15)
 
   return (
     <svg viewBox={`0 0 ${totalwidth} ${barheight}`} width={elemwidth}
