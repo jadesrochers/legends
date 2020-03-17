@@ -1,6 +1,6 @@
 {
     "name": "@jadesrochers/legends",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "license": "MIT",
     "author": "Jared Desrochers",
     "module": "es/index.js",
