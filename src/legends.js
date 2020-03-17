@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from 'react';
 import * as R from 'ramda';
 import { jsx } from '@emotion/core'
 import { TickDumbSet, BarRects } from '@jadesrochers/histograminteract';
