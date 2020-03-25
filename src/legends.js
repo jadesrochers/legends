@@ -22,8 +22,10 @@ const pickformatter = (data) => {
 
 // Takes ticknum as number of ticks for non-quantile scales
 // The datadisplay argument is the d3-scale function
-// svgwidth arg is the width of the svg grid
-// elemwidth is the width of the svg element
+// legsvgwidth arg is the width of the svg grid
+// legsvgheight arg is height of the svg grid
+// To configure size (height/width) of the svg element, no its internal grid
+// use cssStyles argument.
 const BarScale = (props) => {
   if(! props.data || ! props.datadisplay ){ return null }
   const ticks = props.ticknum ? props.ticknum : 5
@@ -36,9 +38,8 @@ const BarScale = (props) => {
   // Intention here was to make barscale adapt to a variety of scales
   /* let thresholds = props.datadisplay.quantiles() || props.datadisplay.thresholds() || props.datadisplay.ticks() */
   let formatter = props.formatter ? props.formatter : pickformatter(props.data)
-  let dispwidth = props.svgwidth ? (props.svgwidth) : 400
-  let totalwidth = props.svgwidth ? (props.svgwidth + 40) : 440
-  const elemwidth = props.elemwidth ? props.elemwidth : '75%' 
+  let dispwidth = props.legsvgwidth ? (props.legsvgwidth) : 400
+  let svgwidth = props.legsvgwidth ? (props.legsvgwidth + 40) : 440
 
   let tickmarks = R.pipe(
     R.append(Math.max(...props.datadisplay.domain())),
@@ -47,13 +48,14 @@ const BarScale = (props) => {
   )(thresholds)
 
   const fillarr = R.zipWith((x,x2) => (props.datadisplay((x+x2)/2)))(R.init(tickmarks), R.drop(1, tickmarks))
+  // These are the bar heights and widths within the svg
   const width = roundtenth( dispwidth/tickmarks.length )
   const height = roundtenth( width/5 )
-  const barheight = props.barheight ? props.barheight : (dispwidth/15)
+  const svgheight = props.legsvgheight ? props.legsvgheight : (dispwidth/15)
 
   return (
-    <svg viewBox={`0 0 ${totalwidth} ${barheight}`} width={elemwidth}
-      css={[props.cssStyles ? props.cssStyles : undefined ] }  >
+    <svg viewBox={`0 0 ${svgwidth} ${svgheight}`} 
+      css={[ { width: '75%', height: '6%' }, props.cssStyles ? props.cssStyles : undefined ] }  >
     <g >
 
      useMemo(() => (

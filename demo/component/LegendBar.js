@@ -18,7 +18,7 @@ const LegendHoriz1 = () => {
   const datadecorate = quantile(YlOrRd7)(data)
   return (
     <BarScale data={data} datadisplay={datadecorate}
-      formatter={format('.3s')} svgwidth={500}
+      formatter={format('.3s')} legsvgwidth={500}
      />
   );
 };
@@ -28,7 +28,7 @@ const LegendHoriz2 = () => {
   const datadecorate = log(GnYlRd9)(data)
   return (
     <BarScale data={data} datadisplay={datadecorate}
-      formatter={format('.2s')} svgwidth={500} ticknum={2}
+      formatter={format('.2s')} ticknum={2} cssStyles={{ fontSize: '0.6rem' }}
      />
   );
 };
@@ -38,7 +38,7 @@ const LegendHoriz3 = () => {
   const datadecorate = power(3/5, GnYlRd7, data)
   return (
     <BarScale data={data} datadisplay={datadecorate}
-      formatter={format('.2s')} svgwidth={500} elemwidth={'800px'} ticknum={6}
+      formatter={format('.2s')} legsvgwidth={500} cssStyles={{ width: '800px', height: '100px' }} ticknum={6}
      />
   );
 };
@@ -48,7 +48,7 @@ const LegendHoriz4 = () => {
   const datadecorate = quantile(GnYlRd73)(data)
   return (
     <BarScale data={data} datadisplay={datadecorate}
-      formatter={format('.3s')} svgwidth={500} elemwidth={'90%'}
+      formatter={format('.2s')}  legsvgheight={30}  cssStyles={{ height: '7vh', width: '90%' }}
      />
   );
 };
