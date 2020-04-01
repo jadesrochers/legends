@@ -30,10 +30,14 @@ const BarScale = (props) => {
   if(! props.data || ! props.datadisplay ){ return null }
   const ticks = props.ticknum ? props.ticknum : 5
   let thresholds
+  // Different scales have different break points, so I check around
+  // for some of the most likely ones.
   if(typeof props.datadisplay.quantiles === "function"){
     thresholds = props.datadisplay.quantiles()
   }else if(typeof props.datadisplay.nice === "function"){
     thresholds = props.datadisplay.nice().ticks(ticks)
+  }else if( typeof props.datadisplay.domain === "function"){
+    thresholds = props.datadisplay.domain()
   }
   // Intention here was to make barscale adapt to a variety of scales
   /* let thresholds = props.datadisplay.quantiles() || props.datadisplay.thresholds() || props.datadisplay.ticks() */
