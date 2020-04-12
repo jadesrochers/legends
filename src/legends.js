@@ -37,6 +37,7 @@ const BarScale = (props) => {
   }else if(typeof props.datadisplay.nice === "function"){
     thresholds = props.datadisplay.nice().ticks(ticks)
   }else if( typeof props.datadisplay.domain === "function"){
+    // This is specifically for threshold scales
     thresholds = props.datadisplay.domain()
   }
   // Intention here was to make barscale adapt to a variety of scales
