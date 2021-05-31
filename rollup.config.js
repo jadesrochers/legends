@@ -6,7 +6,7 @@ import { terser } from "rollup-plugin-terser";
 
 export default {
     input: './src/index.js',
-    external: ['react', '@emotion/core', '@jadesrochers/histograminteract', 'd3-format', 'ramda' ],
+    external: ['react', '@emotion/react', '@jadesrochers/histograminteract', 'd3-format', 'ramda' ],
     output: [
       {
           format: 'umd',

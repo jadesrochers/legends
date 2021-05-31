@@ -14,7 +14,7 @@
 					}
 				}],
 			],
-			"plugins": [ ["emotion", { "sourceMap":false } ] ]
+			"plugins": [ ["@emotion", { "sourceMap":false } ] ]
 		},
    "es6" : {
 			"presets": [ 
@@ -27,7 +27,7 @@
           modules: false,
 				}],
 			],
-			"plugins": [ ["emotion", {"sourceMap":false }] ]
+			"plugins": [ ["@emotion", {"sourceMap":false }] ]
 	 },
    "jest" : {
 			"presets": [ 
@@ -37,7 +37,7 @@
           "modules": 'commonjs',
 				}],
 			],
-			"plugins": ["emotion"]
+			"plugins": ["@emotion"]
 	 }
 	}
 }
