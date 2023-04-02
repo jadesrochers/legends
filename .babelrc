@@ -29,16 +29,19 @@
 			],
 			"plugins": [ ["@emotion", {"sourceMap":false }] ]
 	 },
-   "jest" : {
-			"presets": [ 
-		  "@babel/preset-react", 
-				[ "@babel/preset-env", 
-					{
-          "modules": 'commonjs',
-				}],
-			],
-			"plugins": ["@emotion"]
-	 }
-	}
+
+  "jest" : {
+    "presets": [ 
+      "@babel/preset-react", 
+    [ "@babel/preset-env", 
+    {  
+      "targets": {
+        "node": 12 
+      }
+    }],
+    ],
+    "plugins": ["@emotion"]
+  }
+  }
 }
 

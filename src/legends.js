@@ -60,7 +60,8 @@ const BarScale = (props) => {
 
   return (
     <svg viewBox={`0 0 ${svgwidth} ${svgheight}`} 
-      css={[ { width: '75%' }, props.cssStyles ? props.cssStyles : undefined ] }  >
+      css={[ { width: '75%' }, props.cssStyles ? props.cssStyles : undefined ] }
+      >
     <g >
 
      useMemo(() => (

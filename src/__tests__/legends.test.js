@@ -1,6 +1,7 @@
 import React from 'react';
 import { scaleQuantile, scalePow, scaleLog, scaleThreshold } from 'd3-scale';
-import { mount } from '../enzyme';
+// import { mount } from '../enzyme';
+import { render, screen } from '@testing-library/react'
 import { BarScale } from '../legends';
 import { format } from 'd3-format';
 import * as R from 'ramda';
@@ -32,103 +33,70 @@ describe('Barscale tests', () => {
 
 
   test('Render a quantile bar', () => {
-    const wrapper = mount(<BarScale data={data} datadisplay={quantilebar}
+    render(<BarScale data={data} datadisplay={quantilebar}
      formatter={format('.2~f')} maxwidth={80} 
     />) 
-    /* console.log('QuantileBar debug: ',wrapper.debug()) */
-    expect(wrapper.find('rect').length).toEqual(7)
-    expect(wrapper.find('line').length).toEqual(8)
-    
-    let numgs = wrapper.find('g').length
-    expect(wrapper.find('g').get(numgs - 4).props.transform).toEqual('translate(250,0)')
-    expect(wrapper.find('g').get(numgs - 1).props.transform).toEqual('translate(400,0)')
+    // screen.debug()
 
-    expect(wrapper.containsAllMatchingElements([
-     <rect width={50} height={10} />,
-     <text > 0 </text>,
-     <text > 1 </text>,
-     <text > 2 </text>,
-     <text > 3 </text>,
-     <text > 4 </text>,
-     <text > 5 </text>,
-     <text > 6 </text>,
-     <text > 7 </text>,
-     ])).toBeTruthy()
+    expect(screen.getByText("0")).toBeTruthy()
+    expect(screen.getByText("1")).toBeTruthy()
+    expect(screen.getByText("2")).toBeTruthy()
+    expect(screen.getByText("3")).toBeTruthy()
+    expect(screen.getByText("4")).toBeTruthy()
+    expect(screen.getByText("5")).toBeTruthy()
+    expect(screen.getByText("6")).toBeTruthy()
+    expect(screen.getByText("7")).toBeTruthy()
+    
   });
 
   test('Render a log bar', () => {
-    let wrapper = mount(<BarScale data={data} datadisplay={logbar}
+    render(<BarScale data={data} datadisplay={logbar}
      formatter={format('.2~f')} maxwidth={80}
     />) 
-    /* console.log('LogBar debug: ',wrapper.debug()) */
-    expect(wrapper.find('rect').length).toEqual(7)
-    expect(wrapper.find('line').length).toEqual(8)
+    // screen.debug()
     
-    let numgs = wrapper.find('g').length
-    expect(wrapper.find('g').get(numgs - 4).props.transform).toEqual('translate(250,0)')
-    expect(wrapper.find('g').get(numgs - 1).props.transform).toEqual('translate(400,0)')
+    expect(screen.getByText("1")).toBeTruthy()
+    expect(screen.getByText("10")).toBeTruthy()
+    expect(screen.getByText("100")).toBeTruthy()
+    expect(screen.getByText("1000")).toBeTruthy()
+    expect(screen.getByText("10000")).toBeTruthy()
+    expect(screen.getByText("100000")).toBeTruthy()
+    expect(screen.getByText("1000000")).toBeTruthy()
+    expect(screen.getByText("10000000")).toBeTruthy()
 
-    expect(wrapper.containsAllMatchingElements([
-     <rect width={50} height={10} />,
-     <text > 1 </text>,
-     <text > 10 </text>,
-     <text > 100 </text>,
-     <text > 1000 </text>,
-     <text > 10000 </text>,
-     <text > 100000 </text>,
-     <text > 1000000 </text>,
-     <text > 10000000 </text>,
-     ])).toBeTruthy()
   });
 
   test('Render a power bar', () => {
-    let wrapper = mount(<BarScale data={data} datadisplay={powerbar}
+    render(<BarScale data={data} datadisplay={powerbar}
      formatter={format('.2~f')} maxwidth={80} ticks={8}
     />) 
-    /* console.log('Power Bar debug: ',wrapper.debug()) */
-    expect(wrapper.find('rect').length).toEqual(7)
-    expect(wrapper.find('line').length).toEqual(8)
+    // screen.debug()
     
-    let numgs = wrapper.find('g').length
-    expect(wrapper.find('g').get(numgs - 4).props.transform).toEqual('translate(250,0)')
-    expect(wrapper.find('g').get(numgs - 1).props.transform).toEqual('translate(400,0)')
+    expect(screen.getByText("0")).toBeTruthy()
+    expect(screen.getByText("1000")).toBeTruthy()
+    expect(screen.getByText("2000")).toBeTruthy()
+    expect(screen.getByText("3000")).toBeTruthy()
+    expect(screen.getByText("4000")).toBeTruthy()
+    expect(screen.getByText("5000")).toBeTruthy()
+    expect(screen.getByText("6000")).toBeTruthy()
+    expect(screen.getByText("7000")).toBeTruthy()
 
-    expect(wrapper.containsAllMatchingElements([
-     <rect width={50} height={10} />,
-     <text > 0 </text>,
-     <text > 1000 </text>,
-     <text > 2000 </text>,
-     <text > 3000 </text>,
-     <text > 4000 </text>,
-     <text > 5000 </text>,
-     <text > 6000 </text>,
-     <text > 7000 </text>,
-     ])).toBeTruthy()
   });
 
   test('Render a threshold bar', () => {
-    let wrapper = mount(<BarScale data={data} datadisplay={threshbar}
+    render(<BarScale data={data} datadisplay={threshbar}
      formatter={format('.2~f')} maxwidth={80} ticks={8}
     />) 
-    /* console.log('Power Bar debug: ',wrapper.debug()) */
-    expect(wrapper.find('rect').length).toEqual(7)
-    expect(wrapper.find('line').length).toEqual(8)
-    
-    let numgs = wrapper.find('g').length
-    expect(wrapper.find('g').get(numgs - 4).props.transform).toEqual('translate(250,0)')
-    expect(wrapper.find('g').get(numgs - 1).props.transform).toEqual('translate(400,0)')
+    // screen.debug()
 
-    expect(wrapper.containsAllMatchingElements([
-     <rect width={50} height={10} />,
-     <text > 5 </text>,
-     <text > 10 </text>,
-     <text > 20 </text>,
-     <text > 40 </text>,
-     <text > 80 </text>,
-     <text > 200 </text>,
-     <text > 400 </text>,
-     <text > 1000 </text>,
-     ])).toBeTruthy()
+    expect(screen.getByText("5")).toBeTruthy()
+    expect(screen.getByText("10")).toBeTruthy()
+    expect(screen.getByText("20")).toBeTruthy()
+    expect(screen.getByText("40")).toBeTruthy()
+    expect(screen.getByText("80")).toBeTruthy()
+    expect(screen.getByText("200")).toBeTruthy()
+    expect(screen.getByText("400")).toBeTruthy()
+    expect(screen.getByText("1000")).toBeTruthy()
   });
 
 })

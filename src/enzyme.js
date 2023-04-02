@@ -6,4 +6,3 @@ configure({ adapter: new Adapter() });
 export { shallow, mount, render };
 export default Enzyme;
 
-

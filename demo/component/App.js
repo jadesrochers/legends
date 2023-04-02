@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Link, Router } from '@reach/router';
+import { Link, Router } from '@gatsby/reach-router';
 import { LegendBars } from "./LegendBar";
 
 import './basic.css'
