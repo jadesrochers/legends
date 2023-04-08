@@ -14,67 +14,67 @@ const power = R.curry((pow, outputRange, data) => scalePow().exponent(pow).domai
 const log = R.curry((outputRange, data) => scaleLog().domain(R.values(data)).range(outputRange))
 
 const LegendHoriz1 = () => {
-  const data = [0,1,2,3,4,5,6,7]
-  const datadecorate = quantile(YlOrRd7)(data)
-  return (
-    <BarScale data={data} datadisplay={datadecorate}
-      formatter={format('.3s')} legsvgwidth={500}
-     />
-  );
+    const data = [0,1,2,3,4,5,6,7]
+    const datadecorate = quantile(YlOrRd7)(data)
+    return (
+        <BarScale data={data} datadisplay={datadecorate}
+        formatter={format('.3s')} legsvgwidth={500}
+        />
+    );
 };
 
 const LegendHoriz2 = () => {
-  const data = Array.from({length: 100}, () => Math.random() * 10000)
-  const datadecorate = log(GnYlRd9)(data)
-  return (
-    <BarScale data={data} datadisplay={datadecorate}
-      formatter={format('.2s')} ticknum={2} cssStyles={{ fontSize: '0.6rem' }}
-     />
-  );
+    const data = Array.from({length: 100}, () => Math.random() * 10000)
+    const datadecorate = log(GnYlRd9)(data)
+    return (
+        <BarScale data={data} datadisplay={datadecorate}
+        formatter={format('.2s')} ticknum={2} cssStyles={{ fontSize: '0.6rem' }}
+        />
+    );
 };
 
 const LegendHoriz3 = () => {
-  const data = Array.from({length: 100}, () => Math.random() * 10000)
-  const datadecorate = power(3/5, GnYlRd7, data)
-  return (
-    <BarScale data={data} datadisplay={datadecorate}
-      formatter={format('.2s')} legsvgwidth={500} cssStyles={{ width: '800px', height: '100px' }} ticknum={6}
-     />
-  );
+    const data = Array.from({length: 100}, () => Math.random() * 10000)
+    const datadecorate = power(3/5, GnYlRd7, data)
+    return (
+        <BarScale data={data} datadisplay={datadecorate}
+        formatter={format('.2s')} legsvgwidth={500} cssStyles={{ width: '800px', height: '100px' }} ticknum={6}
+        />
+    );
 };
 
 const LegendHoriz4 = () => {
-  const data = Array.from({length: 50}, () => Math.random() * 300)
-  const datadecorate = quantile(GnYlRd73)(data)
-  return (
-    <BarScale data={data} datadisplay={datadecorate}
-      formatter={format('.2s')}  legsvgheight={30}  cssStyles={{ height: '7vh', width: '90%' }}
-     />
-  );
+    const data = Array.from({length: 50}, () => Math.random() * 300)
+    const datadecorate = quantile(GnYlRd73)(data)
+    return (
+        <BarScale data={data} datadisplay={datadecorate}
+        formatter={format('.2s')}  legsvgheight={30}  cssStyles={{ height: '7vh', width: '90%' }}
+        />
+    );
 };
 
 const LegendBars = () => {
-  return (
-     <div  style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "flex-start",
-        width: "100%",
-        Size: '1.3rem',
-        textAlign: 'center',
-      }} >
-       <h3 style={{ fontSize: '1.4rem' }} >Barscale Examples</h3>
-       <p style={{ fontSize: '1.1rem' }} >
-         Each bar uses different data inputs, <br />
-         with other options applied to try them out.
-       </p>
-       <LegendHoriz1 />
-       <LegendHoriz2 />
-       <LegendHoriz3 />
-       <LegendHoriz4 />
-     </div>
-  );
+    return (
+        <div  style={{
+            display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                width: "100%",
+                Size: '1.3rem',
+                textAlign: 'center',
+        }} >
+        <h3 style={{ fontSize: '1.4rem' }} >Barscale Examples</h3>
+        <p style={{ fontSize: '1.1rem' }} >
+        Each bar uses different data inputs, <br />
+        with other options applied to try them out.
+        </p>
+        <LegendHoriz1 />
+        <LegendHoriz2 />
+        <LegendHoriz3 />
+        <LegendHoriz4 />
+        </div>
+    );
 };
 
 export { LegendBars };

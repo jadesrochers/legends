@@ -8,49 +8,49 @@ const path = require('path');
 // Webpack will still include a ref to it, so you need the externals:
 // statement for sure.
 const config = {
-  entry: './src/index.js',
+    entry: './src/index.js',
 
-  mode: 'production',
+    mode: 'production',
 
-  optimization: {
-    usedExports: true,
-  },
+    optimization: {
+        usedExports: true,
+    },
 
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    library: '@jadesrochers/legends',
-    filename: 'bundle.js',
-    libraryTarget: 'umd',
-  },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        library: '@jadesrochers/legends',
+        filename: 'bundle.js',
+        libraryTarget: 'umd',
+    },
 
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        include: [
-          path.resolve(__dirname, 'src'),
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                include: [
+                    path.resolve(__dirname, 'src'),
+                ],
+                use: {
+                    loader: 'babel-loader',
+                }
+            },
         ],
-        use: {
-          loader: 'babel-loader',
-        }
-      },
-    ],
-  },
+    },
 
-  externals: {
-    'react': {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react',
-    }, 
-    'ramda': 'ramda', 
-    'd3-format':'d3-format', 
-    '@jadesrochers/histograminteract': '@jadesrochers/histograminteract', 
-    '@emotion/react':'@emotion/react',
-   },
+    externals: {
+        'react': {
+            root: 'React',
+            commonjs2: 'react',
+            commonjs: 'react',
+            amd: 'react',
+        }, 
+        'ramda': 'ramda', 
+        'd3-format':'d3-format', 
+        '@jadesrochers/histograminteract': '@jadesrochers/histograminteract', 
+        '@emotion/react':'@emotion/react',
+    },
 
- }
+}
 
 module.exports = config;

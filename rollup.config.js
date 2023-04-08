@@ -8,11 +8,11 @@ export default {
     input: './src/index.js',
     external: ['react', '@emotion/react', '@jadesrochers/histograminteract', 'd3-format', 'ramda' ],
     output: [
-      {
-          format: 'umd',
-          file: './dist/legends-umd.js',
-          name: 'legends',
-      },
+        {
+            format: 'umd',
+            file: './dist/legends-umd.js',
+            name: 'legends',
+        },
     ],
     plugins: [
         babel({
