@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Link, Router } from '@gatsby/reach-router';
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom"
 import { LegendBars } from "./LegendBar";
 
 import './basic.css'
@@ -32,11 +32,13 @@ const Home = (props) => {
 function App() {
   return (
     <div>
-      <Router width='100%' height='100%' >
-        <LegendBars path="/legendbars" />
-        <NotFound default />
-        <Home path="/"/>
-      </Router>
+      <BrowserRouter width='100%' height='100%' >
+	<Routes>
+  	<Route path="/legendbars" element={<LegendBars />} />
+	<Route default element={<NotFound /> } />
+	<Route path="/" element={<Home />} />
+	</Routes>
+      </BrowserRouter>
     </div>
   );
 }

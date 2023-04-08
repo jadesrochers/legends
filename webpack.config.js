@@ -51,6 +51,6 @@ const config = {
     '@emotion/react':'@emotion/react',
    },
 
-}
+ }
 
 module.exports = config;
