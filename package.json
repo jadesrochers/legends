@@ -3,8 +3,6 @@
     "version": "0.1.14",
     "license": "MIT",
     "author": "Jared Desrochers",
-    "module": "es/index.js",
-    "main": "dist/legends-umd.js",
     "sideEffects": false,
     "repository": {
         "type": "git",
@@ -16,6 +14,11 @@
         "README.md",
         "LICENSE"
     ],
+    "exports": {
+        "default": "./dist/selectbox-umd.js",
+        "node": "./dist/selectbox-umd.js",
+        "browser": "./es/index.js"
+    },
     "description": "A custom legend that matched my map formats",
     "keywords": [
         "react",
