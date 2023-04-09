@@ -1,6 +1,5 @@
 import React from 'react';
 import { scaleQuantile, scalePow, scaleLog, scaleThreshold } from 'd3-scale';
-// import { mount } from '../enzyme';
 import { render, screen } from '@testing-library/react'
 import { BarScale } from '../legends';
 import { format } from 'd3-format';
