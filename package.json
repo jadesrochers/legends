@@ -30,7 +30,7 @@
     "jest": {
         "testEnvironment": "jsdom",
         "transformIgnorePatterns": [
-            "/node_modules/(?!d3-format)"
+            "/node_modules/(?!(d3-*|internmap))"
         ]
     },
     "dependencies": {
