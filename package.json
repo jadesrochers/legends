@@ -8,17 +8,19 @@
         "type": "git",
         "url": "https://github.com/jadesrochers/legends.git"
     },
+    "main":  "./dist/legends-umd.js",
+    "exports": {
+        "import": "./es/index.js",
+        "require": "./dist/legends-umd.js",
+        "node": "./dist/legends-umd.js",
+        "default": "./dist/legends-umd.js"
+    },
     "files": [
         "es/",
         "dist/",
         "README.md",
         "LICENSE"
     ],
-    "exports": {
-        "node": "./dist/legends-umd.js",
-        "browser": "./es/index.js",
-        "default": "./dist/legends-umd.js"
-    },
     "description": "A custom legend that matched my map formats",
     "keywords": [
         "react",
