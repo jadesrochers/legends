@@ -15,9 +15,9 @@
         "LICENSE"
     ],
     "exports": {
-        "node": "./dist/selectbox-umd.js",
+        "node": "./dist/legends-umd.js",
         "browser": "./es/index.js",
-        "default": "./dist/selectbox-umd.js"
+        "default": "./dist/legends-umd.js"
     },
     "description": "A custom legend that matched my map formats",
     "keywords": [
@@ -58,8 +58,8 @@
         "@babel/preset-react": "^7.13.13",
         "@emotion/babel-plugin": "^11.3.0",
         "@emotion/jest": "^11.1.0",
-        "@testing-library/jest-dom": "",
-        "@testing-library/react": "",
+        "@testing-library/jest-dom": "^5.16.0",
+        "@testing-library/react": "^14.0.0",
         "babel-jest": "29.5.0",
         "babel-loader": "^9.0.0",
         "css-loader": "^6.0.0",
