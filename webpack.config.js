@@ -35,6 +35,11 @@ const config = {
                     loader: 'babel-loader',
                 }
             },
+            {
+                test: /\.css$/i,
+                exclude: /node_modules/,
+                use: ['style-loader', 'css-loader'],
+            },
         ],
     },
 
@@ -48,7 +53,6 @@ const config = {
         'ramda': 'ramda', 
         'd3-format':'d3-format', 
         '@jadesrochers/histograminteract': '@jadesrochers/histograminteract', 
-        '@emotion/react':'@emotion/react',
     },
 
 }

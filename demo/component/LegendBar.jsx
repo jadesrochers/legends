@@ -3,6 +3,7 @@ import * as R from "ramda";
 import { format } from 'd3-format';
 import { scaleQuantile, scalePow, scaleLog } from 'd3-scale';
 import { BarScale } from 'legends';
+import styles from "./LegendBar.module.css";
 
 const GnYlRd73 = [  '#005a32', '#238443', '#41ab5d', '#78c679', '#addd8e', '#d9f0a3', '#ffffcc', '#ffeda0', '#feb24c', '#f03b20']
 const GnYlRd7 = [ '#1a9850', '#91cf60', '#d9ef8b', '#ffffbf', '#fee08b', '#fc8d59', '#d73027' ]
@@ -28,7 +29,9 @@ const LegendHoriz2 = () => {
     const datadecorate = log(GnYlRd9)(data)
     return (
         <BarScale data={data} datadisplay={datadecorate}
-        formatter={format('.2s')} ticknum={2} cssStyles={{ fontSize: '0.6rem' }}
+        formatter={format('.2s')} ticknum={2} 
+        classnames={[styles.legend2styles]}
+        // cssStyles={{ fontSize: '0.6rem' }}
         />
     );
 };
@@ -38,7 +41,10 @@ const LegendHoriz3 = () => {
     const datadecorate = power(3/5, GnYlRd7, data)
     return (
         <BarScale data={data} datadisplay={datadecorate}
-        formatter={format('.2s')} legsvgwidth={500} cssStyles={{ width: '800px', height: '100px' }} ticknum={6}
+        formatter={format('.2s')} legsvgwidth={500} 
+        className={[styles.legend3styles]}
+        // cssStyles={{ width: '800px', height: '100px' }} 
+        ticknum={6}
         />
     );
 };
@@ -48,7 +54,9 @@ const LegendHoriz4 = () => {
     const datadecorate = quantile(GnYlRd73)(data)
     return (
         <BarScale data={data} datadisplay={datadecorate}
-        formatter={format('.2s')}  legsvgheight={30}  cssStyles={{ height: '7vh', width: '90%' }}
+        formatter={format('.2s')}  legsvgheight={30}  
+        className={[styles.legend4styles]}
+        // cssStyles={{ height: '7vh', width: '90%' }}
         />
     );
 };

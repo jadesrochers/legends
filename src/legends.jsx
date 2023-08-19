@@ -1,9 +1,8 @@
-/** @jsx jsx */
 import React from 'react';
 import * as R from 'ramda';
-import { jsx } from '@emotion/react'
 import { TickDumbSet, BarRects } from '@jadesrochers/histograminteract';
 import { format } from 'd3-format'
+import styles from "./legends.module.css"
 
 const roundtenth = (n) => Math.round(n*10)/10
 
@@ -57,10 +56,13 @@ const BarScale = (props) => {
     const width = roundtenth( dispwidth/tickmarks.length )
     const height = roundtenth( width/5 )
     const svgheight = props.legsvgheight ? props.legsvgheight : (dispwidth/15)
+    const classnames = props.classnames ? props.classnames.join(' ') : styles.sizing
 
     return (
-        <svg viewBox={`0 0 ${svgwidth} ${svgheight}`} 
-        css={[ { width: '75%' }, props.cssStyles ? props.cssStyles : undefined ] }
+        <svg 
+        className={classnames}
+        viewBox={`0 0 ${svgwidth} ${svgheight}`} 
+        // css={[ { width: '75%' }, props.cssStyles ? props.cssStyles : undefined ] }
         >
         <g >
 

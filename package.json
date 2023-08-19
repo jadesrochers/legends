@@ -10,7 +10,7 @@
     },
     "main": "./dist/legends-umd.js",
     "exports": {
-        "import": "./es/index.js",
+        "import": "./es/index.mjs",
         "require": "./dist/legends-umd.js",
         "node": "./dist/legends-umd.js",
         "default": "./dist/legends-umd.js"
@@ -29,13 +29,17 @@
     ],
     "jest": {
         "testEnvironment": "jsdom",
+        "transform": {
+            "^.+\\.jsx?$": "babel-jest",
+            "^.+\\.mjs$": "babel-jest",
+            "^.+\\.js$": "babel-jest"
+        },
         "transformIgnorePatterns": [
             "/node_modules/(?!(d3-*|internmap))"
         ]
     },
     "dependencies": {
-        "@emotion/react": "^11.4.0",
-        "@jadesrochers/histograminteract": "^0.2.0",
+        "@jadesrochers/histograminteract": "^0.2.1",
         "d3-format": "^3.0.0",
         "ramda": "^0.28.0"
     },
@@ -46,7 +50,7 @@
     "scripts": {
         "test": "BABEL_ENV=jest jest",
         "test-watch": "BABEL_ENV=jest jest --watch",
-        "build-es": "BABEL_ENV=es6 babel --out-dir es --ignore '**/__tests__/','**/enzyme.js'  src",
+        "build-es": "BABEL_ENV=es6 babel --keep-file-extension --out-dir es --ignore '**/__tests__/','**/enzyme.js'  src",
         "build-umd-roll": "BABEL_ENV=umd rollup --config ./rollup.config.mjs",
         "profile": "webpack --config ./webpack.config.js --profile --json > webpack-stats.json",
         "start": "BABEL_ENV=es6 webpack serve --progress --port 3000 --host 127.0.0.1 --config demo/webpack.config.js",
@@ -58,13 +62,15 @@
         "@babel/core": "^7.14.3",
         "@babel/preset-env": "^7.14.4",
         "@babel/preset-react": "^7.13.13",
-        "@emotion/babel-plugin": "^11.3.0",
-        "@emotion/jest": "^11.1.0",
+        "@rollup/plugin-babel": "^6.0.0",
+        "@rollup/plugin-commonjs": "^24.0.0",
+        "@rollup/plugin-node-resolve": "^15.0.0",
+        "@rollup/plugin-terser": "^0.4.0",
         "@testing-library/jest-dom": "^5.16.0",
         "@testing-library/react": "^14.0.0",
         "babel-jest": "29.5.0",
         "babel-loader": "^9.0.0",
-        "css-loader": "^6.0.0",
+        "css-loader": "^6.8.1",
         "eslint": "^8.0.0",
         "eslint-config-problems": "^7.0.0",
         "eslint-plugin-react": "^7.24.0",
@@ -74,14 +80,10 @@
         "jest-environment-jsdom": "^29.0.0",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
-        "react-test-renderer": "18.2.0",
         "react-router-dom": "^6.10.0",
+        "react-test-renderer": "18.2.0",
         "rollup": "^3.0.0",
         "rollup-plugin-filesize": "^10.0.0",
-        "@rollup/plugin-babel": "^6.0.0",
-        "@rollup/plugin-commonjs": "^24.0.0",
-        "@rollup/plugin-node-resolve": "^15.0.0",
-        "@rollup/plugin-terser": "^0.4.0",
         "style-loader": "^3.0.0",
         "webpack": "^5.0.0",
         "webpack-cli": "^5.0.0",
