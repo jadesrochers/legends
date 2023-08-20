@@ -45,7 +45,7 @@
         ]
     },
     "dependencies": {
-        "@jadesrochers/histograminteract": "^0.2.1",
+        "@jadesrochers/histograminteract": "^0.3.2",
         "d3-format": "^3.0.0",
         "ramda": "^0.28.0"
     },
